@@ -6,6 +6,14 @@ import java.util.Arrays;
 public class Stream{
 
 
+    public static List<String> convertListToUpperCase(List<String> list){
+
+
+        List<String> result = list.stream().map(string->string.toUpperCase()).collect(Collectors.toList());
+
+        return result;
+    }
+
 
    public static void main(String...strings){
 
@@ -15,6 +23,12 @@ public class Stream{
        List<Integer> odd = list.stream().filter(o->o%2 !=0).collect(Collectors.toList());
        System.out.println(even);
        System.out.println(odd);
+
+
+       List<String> names = Arrays.asList("annie","hector","bridget","nic");
+
+       List<String>result = convertListToUpperCase(names);
+       System.out.println(result);
    }
 
 }
