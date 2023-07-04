@@ -10,6 +10,25 @@ interface FunSum {
     public int sum(int a, int b);
 
 }
+
+class ThreadDemo{
+
+
+    public ThreadDemo(){
+        process();
+    }
+
+    public void process(){
+
+        Runnable runnable = ()->{
+
+            System.out.println(Thread.currentThread().getName());
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+}
 public class LambdaExpression {
 
 
@@ -23,5 +42,7 @@ public class LambdaExpression {
 
         int result  = sum.sum(11,22);
         System.out.println(result);
+
+        ThreadDemo demo = new ThreadDemo();
     }
 }
