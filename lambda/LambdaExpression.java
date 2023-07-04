@@ -16,6 +16,7 @@ class ThreadDemo{
 
     public ThreadDemo(){
         process();
+        execute();
     }
 
     public void process(){
@@ -26,6 +27,18 @@ class ThreadDemo{
         };
 
         Thread thread = new Thread(runnable);
+        thread.start();
+    }
+
+    public void execute(){
+
+
+        Thread thread = new Thread(()->{
+
+
+            System.out.println(Thread.currentThread().getName());
+
+        });
         thread.start();
     }
 }
